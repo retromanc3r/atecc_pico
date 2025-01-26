@@ -41,7 +41,7 @@ This project is designed to interface with the Microchip ATECC608 cryptographic 
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-repo/atecc_pico.git
+    git clone https://github.com/retromanc3r/atecc_pico.git
     cd atecc_pico
     ```
 
