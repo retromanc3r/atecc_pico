@@ -41,7 +41,7 @@ This project is designed to interface with the Microchip ATECC608 cryptographic 
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/retromanc3r/atecc_pico.git
+    git clone https://github.com/your-repo/atecc_pico.git
     cd atecc_pico
     ```
 
@@ -123,12 +123,12 @@ This project is designed to interface with the Microchip ATECC608 cryptographic 
 
 Drop `atecc_pico.uf2` on your Pico after you build the project or use a Raspberry Pi Debug Probe to load `atecc_pico.elf` onto the board via remote debugging with OpenOCD (provided your environment is setup).
 
-OpenOCD
+[OpenOCD](https://openocd.org/)
 ```sh
 openocd -f tcl/interface/cmsis-dap.cfg -f tcl/target/rp2350.cfg -c "adapter speed 5000"
 ```
 
-GDB
+[GDB](https://www.sourceware.org/gdb/)
 ```sh
 gdb-multiarch atecc_pico.elf
 target remote localhost:3333
@@ -143,12 +143,18 @@ c
 |------------------------------|--------------------------------------------------|------------|----------|--------------|
 | **Raspberry Pi Pico / Pico2**  | RP2040-based microcontroller board                 | 1          | Can also use Pico W / Pico2 | [Adafruit](https://www.adafruit.com/product/6006) / [DigiKey](https://www.digikey.com/en/products/detail/raspberry-pi/SC1631/24627136) |
 | **ATECC608 Breakout Board**    | Adafruit ATECC608 STEMMA QT / Qwiic                | 1          | Any I2C-based ATECC608 board will work | [Adafruit](https://www.adafruit.com/product/4314) / [DigiKey](https://www.digikey.com/en/products/detail/adafruit-industries-llc/4314/10419053) |
-| **4.7kΩ Resistors**           | Pull-up resistors for I2C lines                   | 2          | Optional if using STEMMA QT or built-in pull-ups | [Amazon](https://www.amazon.com/Elegoo-Values-Resistor-Assortment-Compliant/dp/B072BL2VX1) |
+| **4.7kΩ Resistors**           | Pull-up resistors for I2C lines            | 2          | Optional if using STEMMA QT or built-in pull-ups | [Amazon](https://www.amazon.com/Elegoo-Values-Resistor-Assortment-Compliant/dp/B072BL2VX1) |
 | **Breadboard**                | Prototyping board                                 | 1          | Any standard size | [Adafruit](https://www.adafruit.com/product/239) / [DigiKey](https://www.digikey.com/en/products/detail/global-specialties/GS-830/5231309) |
 | **Jumper Wires**              | Male-to-male / Male-to-female wires               | 6+         | For I2C and power connections | [Adafruit](https://www.adafruit.com/product/1957) / [DigiKey](https://www.digikey.com/en/products/filter/jumper-wire/640) |
 | **USB Cable**                 | USB to Micro-USB / USB-C                          | 1          | For flashing firmware | [Adafruit](https://www.adafruit.com/product/592) |
 | **Raspberry Pi Debug Probe**  | Debugging interface for OpenOCD (optional)        | 1          | Used for debugging/flashing firmware | [Adafruit](https://www.adafruit.com/product/5699) / [Mouser](https://www.mouser.com/ProductDetail/Adafruit/5699) |
 
+## Hardware Setup
+Below is an example wiring setup for the ATECC608 with the Raspberry Pi Pico:
+
+![ATECC608 Pico Wiring](images/atecc_pico_wiring.jpg)
+
+[Sparkfun](https://www.sparkfun.com) has a really sharp looking ATECC608A Cryptographic Co-processor [breakout](https://www.sparkfun.com/sparkfun-cryptographic-co-processor-breakout-atecc608a-qwiic.html) as well. Any of these should work.
 
 ## License
 
